@@ -4,7 +4,7 @@ Develop a web-application for quizzes
 
 ## Team Members
 1. [Pavel Vybornov](https://github.com/pavvyb) - Programmer
-2. [Amadey Kuspakov](https://github.com/) - Programmer
+2. [Amadey Kuspakov](https://github.com/) - SCRUM-Master
 
 ## Organization
 Daily meetings, retrospective, sprint planning, and sprint review are all organized in the following way:
