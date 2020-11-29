@@ -14,10 +14,7 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 - sprint restrospective - after each sprint review
 
 ## Technologies
-* Already decided:
-	* [GitHub](https://github.com/IU-IPOD-F20/map-projects-teamDoshirak) - Project Backlog, Sprint Backlogs, Sprint Boards, Burndown Charts
-	* [VueJS](https://vuejs.org) - Frontend part
-	* [Telegram](https://web.telegram.org/#/login) - Fast communication, daily meetings, planning and retrospective
-* Being discussed:
-	* Backend part
-	* Database
+* [GitHub](https://github.com/IU-IPOD-F20/map-projects-teamDoshirak) - Project Backlog, Sprint Backlogs, Sprint Boards, Burndown Charts
+* [VueJS](https://vuejs.org) - Frontend part
+* [Telegram](https://web.telegram.org/#/login) - Fast communication, daily meetings, planning and retrospective
+* [FireBase](firebase.google.com) - Database and Backend
