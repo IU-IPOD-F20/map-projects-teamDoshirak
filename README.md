@@ -22,3 +22,28 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 ## Sprint Evaluations
 
 ![Sprint Evaluations](https://docs.google.com/spreadsheets/d/e/2PACX-1vTXIhfQzTkLutk3Wp2zWwAcCXQe7GZCZGWMZHp4nMPAgInjsxWohwH5hxwd4N9iyATx-H-QBAiTGWlj/pubchart?oid=821744637&amp;format=image)
+
+# How to run the project
+
+## Clone the repository
+
+1. `git clone https://github.com/IU-IPOD-F20/map-projects-teamDoshirak.git`
+2. `cd map-projects-teamDoshirak`
+3. `cd quizgame`
+
+## Install the dependencies
+
+1. `npm install`
+
+## Run the application
+1. `npm run serve`
+2. wait until the message appears:
+```
+ App running at:
+  - Local:   http://localhost:8080/
+  - Network: http://192.168.0.81:8080/
+```
+3. open the link that is in "Local" in your browser
+
+### Remarks
+For now, it is not quite clear what the interface does without an explanation. The reason is that the application creation is in progress
