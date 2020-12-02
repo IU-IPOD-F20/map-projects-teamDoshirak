@@ -14,7 +14,7 @@
     </div>
     <div>
       <input type="text" name="quizName" v-model="quizName" placeholder="quizName" />
-      <button type="button" v-on:click="findQuiz()">Find quiz</button>
+      <button type="button" id="answerbutton" v-on:click="findQuiz()">Find quiz</button>
       {{ quizQuestions }}
     </div>
     <div>
@@ -106,7 +106,7 @@ export default {
       const safeJsonStringify = require('safe-json-stringify');
       console.log(safeJsonStringify(snapshot.data()));
       console.log("GOT_CERTAIN");
-  },
+    },
   },
   async beforeMount() {
     const citiesRef = db.collection('quizzes');
