@@ -1,12 +1,22 @@
-import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { mount } from '@vue/test-utils'
+import Home from './../../src/views/Home.vue'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
-    })
-    expect(wrapper.text()).toMatch(msg)
+describe('Mounted Home', () => {
+  const wrapper = mount(Home);
+
+  it('button click with correct answer', () => {
+    wrapper.setData({ answ: "15" })
+    wrapper.setData({ userAnsw: "15" })
+    const button = wrapper.find("answerbutton")
+    button.trigger('click')
+    expect(wrapper.vm.message).toBe('Correct!')
+  });
+
+  it('button click with incorrect answer', () => {
+    wrapper.setData({ answ: "17" })
+    wrapper.setData({ userAnsw: "15" })
+    const button = wrapper.find("answerbutton")
+    button.trigger('click')
+    expect(wrapper.vm.message).toBe('Wrong! Correct answer is: 17')
   })
 })
