@@ -35,6 +35,9 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 
 1. `npm install`
 
+## Test
+1. `npm test`
+
 ## Run the application
 1. `npm run serve`
 2. wait until the message appears:
@@ -47,3 +50,4 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 
 ### Remarks
 For now, it is not quite clear what the interface does without an explanation. The reason is that the application creation is in progress
+
