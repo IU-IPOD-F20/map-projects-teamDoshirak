@@ -10,10 +10,13 @@ jobs:
     - uses: actions/checkout@v1
     - name: Use Node.js
       uses: actions/setup-node@master
-    - name: Clean, install, update, build, test
+    - name: Clean cache
+      run: cache clean --force
+    - name: Init
+      run: npm init
+    - name: Install, update, build, test
       run: |
-        npm cache clean --force
-        npm init
+        npm install
         npm update
         npm run build
         npm test
