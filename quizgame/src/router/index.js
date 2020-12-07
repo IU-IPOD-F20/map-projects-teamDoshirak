@@ -1,11 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Authorization from '../views/Authorization.vue'
+import CreateQuiz from '../views/CreateQuiz.vue'
+import Quiz from '../views/Quiz.vue'
+import UserInfo from '../views/UserInfo.vue'
 import { auth } from '../firebase'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/',
+    name: 'Authorization',
+    component: Authorization,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/createquiz',
+    name: 'CreateQuiz',
+    component: CreateQuiz,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/quiz',
+    name: 'Quiz',
+    component: Quiz,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/user',
+    name: 'UserInfo',
+    component: UserInfo,
+    meta: {
+      requiresAuth: false
+    }
+  },
   {
     path: '/',
     name: 'Home',
