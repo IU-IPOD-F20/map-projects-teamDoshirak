@@ -12,8 +12,6 @@ jobs:
       uses: actions/setup-node@master
     - name: Install
       run: npm install -d
-    - name: Change folder to quizgame
-      run: npm start --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame
     - name: build
       run: npm run build
     - name: test
