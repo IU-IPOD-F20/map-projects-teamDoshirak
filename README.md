@@ -57,6 +57,7 @@ For now, it is not quite clear what the interface does without an explanation. T
 
 ## Test coverage
 ![](images/tests.png)
+
 [x] Tested functions in the application
 [] Tested user input
 
