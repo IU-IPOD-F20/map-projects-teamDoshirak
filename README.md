@@ -48,6 +48,10 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 ### Remarks
 For now, it is not quite clear what the interface does without an explanation. The reason is that the application creation is in progress
 
+## Burndown chart
+Number of User Stories finished durnig the sprint
+![](images/burndown.png)
+
 # Testing
 ## How to run tests
 1. Go to the root directory of the project
