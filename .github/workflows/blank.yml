@@ -10,11 +10,11 @@ jobs:
     - uses: actions/checkout@v1
     - name: Use Node.js
       uses: actions/setup-node@master
-    - name: Init
-      run: npm init
-    - name: Install, update, build, test
+    - name: Install
+      run: npm install
+    - name: Init, update, build, test
       run: |
-        npm install
+        npm init
         npm update
         npm run build
         npm test
