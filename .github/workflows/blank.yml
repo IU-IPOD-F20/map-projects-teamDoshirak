@@ -13,8 +13,7 @@ jobs:
     - name: Clean, install, update, build, test
       run: |
         npm cache clean --force
-        npm init
-        npm install
+        npm install -g express
         npm update
         npm run build
         npm test
