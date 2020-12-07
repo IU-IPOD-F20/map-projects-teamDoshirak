@@ -12,11 +12,10 @@ jobs:
       uses: actions/setup-node@master
     - name: Install
       run: npm install
-    - name: Init, update, build, test
-      run: |
-        npm update
-        npm run build
-        npm test
+    - name: build
+      run: npm run build
+    - name: test
+      run: npm test
       env:
         CI: true
 
