@@ -64,6 +64,8 @@ For now, it is not quite clear what the interface does without an explanation. T
 # Branching policy
 - Adding new feature
 `feature/featurename`
+- Adding tests
+`testing/testscope`
 - Changing the documentation
 `documentation/documentname`
 
