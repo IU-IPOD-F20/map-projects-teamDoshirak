@@ -56,7 +56,12 @@ For now, it is not quite clear what the interface does without an explanation. T
 `npm test`
 
 ## Test coverage
-![](images/tests.png)
+
+List of performed tests
+![](images/testlist.png)
+
+Test completion stats
+![](images/testcompletion.png)
 
 [x] Tested functions in the application
 [] Tested user input
