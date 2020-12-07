@@ -74,3 +74,7 @@ For now, it is not quite clear what the interface does without an explanation. T
 ![](images/generalscheme.png)
 ### Database scheme
 ![](images/databasescheme.png)
+
+# Other Documentation
+- [User Documentation](USERDOC.md)
+- [Technical Documentation](TECHDOC.md)
