@@ -63,8 +63,8 @@ List of performed tests
 Test completion stats
 ![](images/testcompletion.png)
 
-[x] Tested functions in the application
-[] Tested user input
+- Tested functions in the application
+- Tested all parts of user interface
 
 # Branching policy
 - Adding new feature
