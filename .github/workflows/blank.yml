@@ -14,7 +14,6 @@ jobs:
       run: |
         npm cache clean --force
         npm init
-        npm install <pkg>
         npm update
         npm run build
         npm test
