@@ -23,9 +23,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import { auth, db } from '@/firebase'
-// import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Quiz',
@@ -58,14 +56,11 @@ export default {
       .then((user) => {
         console.log(user);
         console.log(auth.currentUser.uid);
-        // Signed in 
-        // ...
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        // ..
       });
     },
     async answer(){
@@ -74,7 +69,6 @@ export default {
         const helper = this.currentQuiz[this.quesnum];
         const quizFinderB = db.collection('questions').doc(helper);
         const snapshotB = await quizFinderB.get();
-        // console.log(safeJsonStringify(snapshotB.data()));
         this.currentQuestion = snapshotB.data();
       }
       else {
@@ -88,7 +82,6 @@ export default {
           const helper = this.currentQuiz[this.quesnum];
           const quizFinderB = db.collection('questions').doc(helper);
           const snapshotB = await quizFinderB.get();
-        // console.log(safeJsonStringify(snapshotB.data()));
           this.currentQuestion = snapshotB.data();
           this.final = '';
           this.nexxt = 0;
@@ -101,14 +94,11 @@ export default {
       .then((user) => {
         console.log(user);
         console.log(auth.currentUser.uid);
-        // Signed in 
-        // ...
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        // ..
       });
     },
     async findQuiz() {
@@ -130,7 +120,6 @@ export default {
     const citiesRef = db.collection('quizzes');
     const snapshot = await citiesRef.get();
     const safeJsonStringify = require('safe-json-stringify');
-    // console.log(JSON.parse(JSON.stringify(snapshot)));
     snapshot.forEach(doc => {
       console.log("NEW");
       console.log(safeJsonStringify(doc.data()));
