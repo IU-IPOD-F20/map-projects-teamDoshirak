@@ -12,7 +12,7 @@ jobs:
       uses: actions/setup-node@master
     - name: Clean, install, update, build, test
       run: |
-        npm cache clean
+        npm cache clean --force
         npm install
         npm update
         npm run build
