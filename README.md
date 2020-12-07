@@ -61,10 +61,12 @@ Number of User Stories finished durnig the sprint
 
 ## Test coverage
 
-List of performed tests
+List of performed tests:
+
 ![](images/testlist.png)
 
-Test completion stats
+Test completion stats:
+
 ![](images/testcompletion.png)
 
 - Tested functions in the application
