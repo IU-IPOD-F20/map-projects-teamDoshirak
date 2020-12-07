@@ -10,10 +10,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Use Node.js
       uses: actions/setup-node@master
-    - name: Change folder to quizgame
-      run: cd quizgame
     - name: Install
       run: npm install -d
+    - name: Change folder to quizgame
+      run: npm start --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame
     - name: build
       run: npm run build
     - name: test
