@@ -3,20 +3,20 @@
     <div>
       <input type="text" name="quizName" v-model="quizName" placeholder="quizName" />
       <button type="button" id="answerbutton" v-on:click="findQuiz()">Find quiz</button>
-      {{ quizQuestions }}
     </div>
     <div>
-      Quiz Example:
+      Quiz Questions:
       <div>
         <div>
-          {{text}}
-          {{options}}
+          {{currentQuestion.questionText}}
+          <!-- {{options}} -->
           <select class="form-control" v-model="userAnsw" :required="true">
             <option v-for="option in options" v-bind:key="option.id">{{ option }}</option>
           </select>
         </div>
         <div>{{final}}</div>
         <button type="button" v-on:click="answer()">Answer</button>
+        <button type="button" v-if="nexxt==1" v-on:click="contin()">Next Question</button>
       </div>
     </div>
   </div>
@@ -34,6 +34,10 @@ export default {
   },
   data() {
     return {
+      currentQuiz: {},
+      currentQuestion: {},
+      quesnum: 1,
+      nexxt: 0,
       options: [],
       answ: '',
       userAnsw: '',
@@ -66,11 +70,30 @@ export default {
     },
     async answer(){
       if (this.userAnsw===this.answ){
-        this.final = "Correct!";
+        this.quesnum = this.quesnum + 1;
+        const helper = this.currentQuiz[this.quesnum];
+        const quizFinderB = db.collection('questions').doc(helper);
+        const snapshotB = await quizFinderB.get();
+        // console.log(safeJsonStringify(snapshotB.data()));
+        this.currentQuestion = snapshotB.data();
       }
       else {
         this.final = "Wrong! Correct answer is: " + this.answ;
+        this.nexxt = 1;
       }
+    },
+    async contin() {
+        if (this.nexxt==1){
+          this.quesnum = this.quesnum + 1;
+          const helper = this.currentQuiz[this.quesnum];
+          const quizFinderB = db.collection('questions').doc(helper);
+          const snapshotB = await quizFinderB.get();
+        // console.log(safeJsonStringify(snapshotB.data()));
+          this.currentQuestion = snapshotB.data();
+          this.final = '';
+          this.nexxt = 0;
+        }
+        this.quesnum = this.quesnum + 1;
     },
     async login() {
       console.log(auth.currentUser.uid);
@@ -95,6 +118,12 @@ export default {
       console.log(safeJsonStringify(snapshot.data()));
       this.quizQuestions = snapshot.data();
       console.log("GOT_CERTAIN");
+      this.currentQuiz = snapshot.data();
+      const helper = this.currentQuiz[1];
+      const quizFinderB = db.collection('questions').doc(helper);
+      const snapshotB = await quizFinderB.get();
+      console.log(safeJsonStringify(snapshotB.data()));
+      this.currentQuestion = snapshotB.data();
     },
   },
   async beforeMount() {
