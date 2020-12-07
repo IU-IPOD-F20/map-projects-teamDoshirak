@@ -35,9 +35,6 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 
 1. `npm install`
 
-## Test
-1. `npm test`
-
 ## Run the application
 1. `npm run serve`
 2. wait until the message appears:
@@ -50,4 +47,22 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 
 ### Remarks
 For now, it is not quite clear what the interface does without an explanation. The reason is that the application creation is in progress
+
+# Testing
+## How to run tests
+1. Go to the root directory of the project
+`map-projects-teamDoshirak/quizgame`
+1. Run 
+`npm test`
+
+## Test coverage
+![](images/filename.png) template for image insertion
+
+# Branching policy
+- Adding new feature
+`feature/featurename`
+- Changing the documentation
+`documentation/documentname`
+
+# Project architecture
 
