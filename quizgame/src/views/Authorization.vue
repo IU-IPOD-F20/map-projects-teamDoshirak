@@ -13,9 +13,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import { auth } from '@/firebase'
-// import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Authorization',
@@ -34,7 +32,6 @@ export default {
       quizName: '',
       finalResult: '',
       quizQuestions: {},
-      quizData: {},
       quizlist: []
     };
   },
@@ -44,14 +41,11 @@ export default {
       .then((user) => {
         console.log(user);
         console.log(auth.currentUser.uid);
-        // Signed in 
-        // ...
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        // ..
       });
     },
     async login() {
@@ -60,14 +54,11 @@ export default {
       .then((user) => {
         console.log(user);
         console.log(auth.currentUser.uid);
-        // Signed in 
-        // ...
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        // ..
       });
     },
   }

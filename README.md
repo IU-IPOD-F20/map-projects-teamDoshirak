@@ -73,6 +73,8 @@ Test completion stats
 # Branching policy
 - Adding new feature
 `feature/featurename`
+- Fixing
+`fix/featurename`
 - Adding tests
 `testing/unit`
 - Changing the documentation

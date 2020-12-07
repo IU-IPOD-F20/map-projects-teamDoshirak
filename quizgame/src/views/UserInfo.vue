@@ -7,9 +7,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import { auth } from '@/firebase'
-// import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'UserInfo',
@@ -20,18 +18,6 @@ export default {
     return {
       userId: '',
       userEmail: '',
-    //   options: [],
-    //   answ: '',
-    //   userAnsw: '',
-    //   text: '',
-    //   email: '',
-    //   final: '',
-    //   password: '',
-    //   quizName: '',
-    //   finalResult: '',
-    //   quizQuestions: {},
-    //   quizData: {},
-    //   quizlist: []
     };
   },
   methods: {
