@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div>
-      <input type="text" name="quizName" v-model="quizName" placeholder="quizName" />
+      <input type="text" id="searcher" name="quizName" v-model="quizName" placeholder="quizName" />
       <button type="button" id="answerbutton" v-on:click="findQuiz()">Find quiz</button>
     </div>
     <div>
@@ -10,13 +10,13 @@
         <div>
           {{currentQuestion.questionText}}
           <!-- {{options}} -->
-          <select class="form-control" v-model="userAnsw" :required="true">
+          <select class="form-control" id="answerer" v-model="userAnsw" :required="true">
             <option v-for="option in options" v-bind:key="option.id">{{ option }}</option>
           </select>
         </div>
         <div>{{final}}</div>
-        <button type="button" v-on:click="answer()">Answer</button>
-        <button type="button" v-if="nexxt==1" v-on:click="contin()">Next Question</button>
+        <button type="button" id="answbut" v-on:click="answer()">Answer</button>
+        <button type="button" v-if="nexxt==1" id="nextbut" v-on:click="contin()">Next Question</button>
       </div>
     </div>
   </div>

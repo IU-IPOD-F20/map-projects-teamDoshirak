@@ -3,11 +3,11 @@
     <div>Here is the login form:</div>
     <div>
       {{email}}
-      <input type="text" name="email" v-model="email" placeholder="email" />
+      <input type="text" id="email" name="email" v-model="email" placeholder="email" />
       {{password}}
-      <input type="password" name="password" v-model="password" placeholder="Password" />
-      <button type="button" v-on:click="register()">Register</button>
-      <button type="button" v-on:click="login()">Login</button>
+      <input type="password" id="#password" name="password" v-model="password" placeholder="Password" />
+      <button type="button" id="registerer" v-on:click="register()">Register</button>
+      <button type="button" id="loginer" v-on:click="login()">Login</button>
     </div>
   </div>
 </template>
