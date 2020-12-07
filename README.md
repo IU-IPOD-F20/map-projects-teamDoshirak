@@ -65,7 +65,7 @@ For now, it is not quite clear what the interface does without an explanation. T
 - Adding new feature
 `feature/featurename`
 - Adding tests
-`testing/testscope`
+`testing/unit`
 - Changing the documentation
 `documentation/documentname`
 
