@@ -14,7 +14,6 @@ jobs:
       run: npm install
     - name: Init, update, build, test
       run: |
-        npm init
         npm update
         npm run build
         npm test
