@@ -11,8 +11,7 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@master
     - name: Change folder
-      run: cd map-projects-teamDoshirak
-           cd quizgame
+      run: cd quizgame
     - name: Install
       run: npm install -d
     - name: build
