@@ -57,12 +57,15 @@ For now, it is not quite clear what the interface does without an explanation. T
 
 ## Test coverage
 ![](images/tests.png)
+
 [x] Tested functions in the application
 [] Tested user input
 
 # Branching policy
 - Adding new feature
 `feature/featurename`
+- Adding tests
+`testing/testscope`
 - Changing the documentation
 `documentation/documentname`
 
