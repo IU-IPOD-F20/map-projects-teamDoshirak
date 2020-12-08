@@ -27,7 +27,7 @@ jobs:
       uses: actions/setup-node@master
     - name: Install and check codestyle
       run: |
-        npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame install
+        npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame install -d
         npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run codestyle
       env:
         CI: true
