@@ -11,7 +11,7 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@master
     - name: Install
-      run: npm install -d
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame install -d
     - name: build
       run: npm run build
     - name: test
