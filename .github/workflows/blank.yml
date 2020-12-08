@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Use Node.js
       uses: actions/setup-node@master
-    - name: Install
+    - name: install
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame install -d
     - name: build
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
@@ -27,7 +27,7 @@ jobs:
       uses: actions/setup-node@master
     - name: Install and check codestyle
       run: |
-        npm install
-        npm run codestyle
+        npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame install
+        npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run codestyle
       env:
         CI: true
