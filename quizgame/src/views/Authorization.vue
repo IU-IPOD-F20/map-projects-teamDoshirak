@@ -1,13 +1,11 @@
 <template>
-  <div class="home">
-    <div>Here is the login form:</div>
-    <div>
-      {{email}}
-      <input type="text" id="email" name="email" v-model="email" placeholder="email" />
-      {{password}}
-      <input type="password" id="#password" name="password" v-model="password" placeholder="Password" />
-      <button type="button" id="registerer" v-on:click="register()">Register</button>
-      <button type="button" id="loginer" v-on:click="login()">Login</button>
+  <div class="centered">
+    <div class="header">Sign In or Sign Up</div>
+    <div class="col mt-small">
+      <input type="text" id="email" name="email" v-model="email" placeholder="email" class="field" />
+      <input type="password" id="#password" name="password" v-model="password" placeholder="Password" class="mt-small field" />
+      <button type="button" id="registerer" class="mt-small btn" v-on:click="register()">Register</button>
+      <button type="button" id="loginer" class="mt-small btn" v-on:click="login()">Login</button>
     </div>
   </div>
 </template>
