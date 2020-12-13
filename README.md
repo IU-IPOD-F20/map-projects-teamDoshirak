@@ -45,12 +45,8 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 ```
 3. open the link that is in "Local" in your browser
 
-### Remarks
-For now, it is not quite clear what the interface does without an explanation. The reason is that the application creation is in progress
-
-## Burndown chart
-Number of User Stories finished durnig the sprint
-![](images/burndown.png)
+## Burndown Charts
+[Charts](BURNDOWN.md)
 
 # Testing
 ## How to run tests
