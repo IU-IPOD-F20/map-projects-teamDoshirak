@@ -2,8 +2,8 @@
   <div class="centered">
       <span class="header" v-if="stage!=2">Create your own quiz!</span>
     <div v-if="stage==0" class="col">
-        <input type="text" name="quizname" v-model="quizname" placeholder="Enter quiz name..." id="qizname" class="mt-small field">
-        <button @click="createinit" class="mt-small btn">Next</button>
+        <input type="text" name="quizname" v-model="quizname" placeholder="Enter quiz name..." id="quizname" class="mt-small field">
+        <button @click="createinit" class="mt-small btn" id="buttoner">Next</button>
     </div>
     <div v-if="stage==1">
         <div class="mt-small">
@@ -15,8 +15,8 @@
                 <input type="text" name="opt3" id="opt3" v-model="opt3" placeholder="Answer option 3" class="mt-small field">
                 <input type="text" name="opt4" id="opt4" v-model="opt4" placeholder="Answer option 4" class="mt-small field">
                 <input type="text" name="correctanswer" id="correctanswer" v-model="correctanswer" placeholder="Enter correct answer" class="mt-small field">
-                <button @click="questionadder" class="mt-small btn">Add question</button>
-                <button @click="stage=2" class="mt-small btn">Finish</button>
+                <button @click="questionadder" id="addques" class="mt-small btn">Add question</button>
+                <button @click="stage=2" id="fin" class="mt-small btn">Finish</button>
             </div>
         </div>
     </div>

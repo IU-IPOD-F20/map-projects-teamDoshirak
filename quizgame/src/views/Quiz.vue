@@ -85,7 +85,6 @@ export default {
           this.final = '';
           this.nexxt = 3;
         }
-        
       }
       else {
         this.final = "Wrong! Correct answer is: " + this.currentQuestion.correctAnswer;
