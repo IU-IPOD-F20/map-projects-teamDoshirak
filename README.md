@@ -63,7 +63,7 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 - Tested all parts of user interface
 
 ## Live test logs from CI
-You can find the logs [here](BURNDOWN.md)
+You can find the logs [here](quizgame/output/coverage)
 
 # Branching policy
 - Adding new feature
