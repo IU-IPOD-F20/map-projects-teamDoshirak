@@ -49,24 +49,21 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 [Charts](BURNDOWN.md)
 
 # Testing
-## How to run tests
+## How to run tests manually
 1. Go to the root directory of the project
 `map-projects-teamDoshirak/quizgame`
 1. Run 
 `npm test`
 
-## Test coverage
-
-List of performed tests:
-
-![](images/testlist.png)
-
-Test completion stats:
+## Test coverage output example
 
 ![](images/testcompletion.png)
 
 - Tested functions in the application
 - Tested all parts of user interface
+
+## Live test logs from CI
+You can find the logs [here](BURNDOWN.md)
 
 # Branching policy
 - Adding new feature

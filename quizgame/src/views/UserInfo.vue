@@ -23,10 +23,12 @@ export default {
   methods: {
   },
   async beforeMount() {
-    const usId = await auth.currentUser.uid;
-    const usEm = await auth.currentUser.email;
-    this.userId = usId;
-    this.userEmail = usEm;
+    if (auth.currentUser){
+      const usId = await auth.currentUser.uid;
+      const usEm = await auth.currentUser.email;
+      this.userId = usId;
+      this.userEmail = usEm;
+    }
   },
 }
 </script>
