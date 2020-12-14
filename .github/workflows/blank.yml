@@ -26,5 +26,7 @@ jobs:
       run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/public
     - name: lstests
       run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/tests
+    - name: find Results
+      run: find "$(pwd -P)" -name "results.html"
       env:
         CI: true
