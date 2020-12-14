@@ -16,10 +16,7 @@ jobs:
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
     - name: test
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test -- --coverage --coverageDirectory=output/coverage
-    - name: unit tests results
-      uses: actions/upload-artifact@v1
-      with:
-        name: unit-tests-results
-        path: /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/output/coverage/cobertura-coverage.xml
+    - name: lsoutput
+      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/output/coverage
       env:
         CI: true
