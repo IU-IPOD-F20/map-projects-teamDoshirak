@@ -20,5 +20,11 @@ jobs:
       run: ls
     - name: lsquizgames
       run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame
+    - name: lsdist
+      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/dist
+    - name: lspublic
+      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/public
+    - name: lstests
+      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/tests
       env:
         CI: true
