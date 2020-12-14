@@ -15,19 +15,8 @@ jobs:
     - name: build
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
     - name: test
-      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test
-      env:
-        CI: true
-
-  checkCodestyle:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js
-      uses: actions/setup-node@master
-    - name: Install and check codestyle
-      run: |
-        npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame install -d
-        npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run codestyle
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test --outputFile="/home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/results.json" --colors
+    - name: lsroot
+      run: echo "$(</home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/results.json)"
       env:
         CI: true

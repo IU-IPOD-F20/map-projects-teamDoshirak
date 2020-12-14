@@ -1,22 +1,26 @@
 <template>
-  <div class="home">
-    <div>
-      <input type="text" id="searcher" name="quizName" v-model="quizName" placeholder="quizName" />
-      <button type="button" id="answerbutton" v-on:click="findQuiz()">Find quiz</button>
+  <div class="centered">
+    <div v-if="finderfield==1" class="col">
+      <span class="header">Find quiz by name</span>
+      <input type="text" id="searcher" name="quizName" v-model="quizName" placeholder="quizName" class="mt-small field" />
+      <button type="button" id="answerbutton" v-on:click="findQuiz()" class="mt-small btn">Find quiz</button>
     </div>
-    <div>
-      Quiz Questions:
-      <div>
-        <div>
-          {{currentQuestion.questionText}}
+    <div v-if="finderfield==0">
+      <span class="header">Quiz Question:</span>
+      <div v-if="nexxt!=3">
+        <div class="col mt-small">
+          <span class="questiontxt">{{currentQuestion.questionText}}</span>
           <!-- {{options}} -->
-          <select class="form-control" id="answerer" v-model="userAnsw" :required="true">
-            <option v-for="option in options" v-bind:key="option.id">{{ option }}</option>
+          <select class="mt-small" id="answerer" v-model="userAnsw" :required="true">
+            <option v-for="option in currentQuestion.answerOptions" v-bind:key="option.id">{{ option }}</option>
           </select>
         </div>
-        <div>{{final}}</div>
-        <button type="button" id="answbut" v-on:click="answer()">Answer</button>
-        <button type="button" v-if="nexxt==1" id="nextbut" v-on:click="contin()">Next Question</button>
+        <div class="mt-small">{{final}}</div>
+        <button type="button" v-if="nexxt!=1" id="answbut" v-on:click="answer()" class="mt-small btn">Answer</button>
+        <button type="button" v-if="nexxt==1" id="nextbut" v-on:click="contin()" class="mt-small btn">Next Question</button>
+      </div>
+      <div v-if="nexxt==3">
+        You have finished! your score is {{ score }} out of {{ kolichka }}
       </div>
     </div>
   </div>
@@ -32,7 +36,10 @@ export default {
   },
   data() {
     return {
+      finderfield: 1,
       currentQuiz: {},
+      score: 0,
+      kolichka: 0,
       currentQuestion: {},
       quesnum: 1,
       nexxt: 0,
@@ -64,27 +71,42 @@ export default {
       });
     },
     async answer(){
-      if (this.userAnsw===this.answ){
+      if (this.userAnsw===this.currentQuestion.correctAnswer){
+        this.score = this.score + 1;
+        this.kolichka = this.kolichka + 1;
         this.quesnum = this.quesnum + 1;
         const helper = this.currentQuiz[this.quesnum];
-        const quizFinderB = db.collection('questions').doc(helper);
-        const snapshotB = await quizFinderB.get();
-        this.currentQuestion = snapshotB.data();
+        if (helper) {
+          const quizFinderB = db.collection('questions').doc(helper);
+          const snapshotB = await quizFinderB.get();
+          this.currentQuestion = snapshotB.data();
+        }
+        else {
+          this.final = '';
+          this.nexxt = 3;
+        }
       }
       else {
-        this.final = "Wrong! Correct answer is: " + this.answ;
+        this.final = "Wrong! Correct answer is: " + this.currentQuestion.correctAnswer;
         this.nexxt = 1;
+        this.kolichka = this.kolichka + 1;
       }
     },
     async contin() {
         if (this.nexxt==1){
           this.quesnum = this.quesnum + 1;
           const helper = this.currentQuiz[this.quesnum];
-          const quizFinderB = db.collection('questions').doc(helper);
-          const snapshotB = await quizFinderB.get();
-          this.currentQuestion = snapshotB.data();
-          this.final = '';
-          this.nexxt = 0;
+          if (helper) {
+            const quizFinderB = db.collection('questions').doc(helper);
+            const snapshotB = await quizFinderB.get();
+            this.currentQuestion = snapshotB.data();
+            this.final = '';
+            this.nexxt = 0;
+          }
+          else {
+            this.final = '';
+            this.nexxt = 3;
+          }
         }
         this.quesnum = this.quesnum + 1;
     },
@@ -114,6 +136,7 @@ export default {
       const snapshotB = await quizFinderB.get();
       console.log(safeJsonStringify(snapshotB.data()));
       this.currentQuestion = snapshotB.data();
+      this.finderfield = 0;
     },
   },
   async beforeMount() {

@@ -13,8 +13,11 @@
     "core-js": "^3.6.5",
     "firebase": "^7.24.0",
     "safe-json-stringify": "^1.2.0",
+    "uuid": "^8.3.2",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "sass-loader": "^8.0.2",
+    "node-sass": "^4.13.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -62,7 +65,7 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest",
-    "coverageReporters": [
+     "coverageReporters": [
       "text",
       "cobertura"
     ]

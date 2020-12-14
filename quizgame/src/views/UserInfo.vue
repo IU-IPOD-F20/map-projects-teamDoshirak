@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
-    User Info
-    <div>User ID: {{userId}}</div>
-    <div>User email: {{userEmail}}</div>
+  <div class="centered">
+    <span class="header">User Info</span>
+    <div class="mt-small"><span class="semiheader">User ID: </span>{{userId}}</div>
+    <div class="mt-small"><span class="semiheader">User email: </span>{{userEmail}}</div>
   </div>
 </template>
 
