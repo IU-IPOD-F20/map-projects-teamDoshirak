@@ -15,20 +15,8 @@ jobs:
     - name: build
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
     - name: test
-      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test --outputFile=/home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/results.json --colors
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test --outputFile="/home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/results.json" --colors
     - name: lsroot
-      run: ls
-    - name: lsquizgames
-      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame
-    - name: lsdist
-      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/dist
-    - name: lspublic
-      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/public
-    - name: lstests
-      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/tests
-    - name: lstestsunit
-      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/tests/unit
-    - name: find Results
-      run: find "$(cd ..; pwd)" -name "results.html"
+      run: echo "/home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/results.json"
       env:
         CI: true
