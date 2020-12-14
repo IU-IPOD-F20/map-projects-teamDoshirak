@@ -65,9 +65,10 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest",
-     "coverageReporters": [
-      "text",
-      "cobertura"
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
     ]
   }
 }
