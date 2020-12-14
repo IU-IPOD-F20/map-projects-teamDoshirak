@@ -16,5 +16,7 @@ jobs:
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
     - name: test
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test --outputFile=results.html --colors
+    - name: lsroot
+      run: ls
       env:
         CI: true
