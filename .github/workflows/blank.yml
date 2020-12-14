@@ -15,11 +15,6 @@ jobs:
     - name: build
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
     - name: test
-      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test | tee log.txt
-    - name: upload test results
-      uses: actions/upload-artifact@v1
-      with: 
-        name: unit-tests results
-        path: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test --outputFile=results.html --colors
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test --outputFile=results.html --colors
       env:
         CI: true
