@@ -15,7 +15,7 @@ jobs:
     - name: build
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
     - name: test
-      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test --outputFile=results.html --colors
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test --outputFile=/home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/results.json --colors
     - name: lsroot
       run: ls
     - name: lsquizgames
