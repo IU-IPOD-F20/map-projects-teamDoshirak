@@ -26,6 +26,8 @@ jobs:
       run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/public
     - name: lstests
       run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/tests
+    - name: lstestsunit
+      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/tests/unit
     - name: find Results
       run: find "$(cd ..; pwd)" -name "results.html"
       env:
