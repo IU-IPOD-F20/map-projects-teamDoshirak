@@ -25,10 +25,10 @@ jobs:
         path: /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame/output/coverage/
     - name: Build and Deploy dосs # Запускаем доку
       uses: JamesIves/github-pages-deploy-action@master
-      if: github.event.prerelease == false
       env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: docs
           BUILD_SCRIPT: npm install && npm run typedoc
+          CLEAN: true
           CI: true
