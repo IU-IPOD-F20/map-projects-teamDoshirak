@@ -57,6 +57,8 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 
 ## Test coverage output example
 
+https://iu-ipod-f20.github.io/map-projects-teamDoshirak/
+
 ![](images/testcompletion.png)
 
 - Tested functions in the application
