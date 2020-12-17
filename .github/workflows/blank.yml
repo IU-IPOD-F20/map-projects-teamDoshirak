@@ -14,12 +14,11 @@ jobs:
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame install -d
     - name: build
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
-    - name: Build and Deploy dосs # Запускаем доку
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: quizgame
-          BUILD_SCRIPT: npm install && npm test -- --coverage --coverageDirectory=output/coverage
-          CLEAN: true
-          CI: true
+    - name: test
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test -- --coverage --coverageDirectory=docs/coverage
+    - name: publish test coverage report
+      uses: EndBug/add-and-commit@v4
+      with:
+        add: docs
+        force: true
+        message: Add generated docs
