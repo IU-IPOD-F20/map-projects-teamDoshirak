@@ -15,7 +15,7 @@ jobs:
     - name: build
       run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
     - name: test
-      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test -- --coverage --coverageDirectory=docs/coverage
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test -- --coverage --coverageDirectory=quizgame/docs/coverage
     - name: publish test coverage report
       uses: EndBug/add-and-commit@v4
       with:
