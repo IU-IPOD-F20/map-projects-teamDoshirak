@@ -56,16 +56,13 @@ Daily meetings, retrospective, sprint planning, and sprint review are all organi
 `npm test`
 
 ## Test coverage output example
-
-https://iu-ipod-f20.github.io/map-projects-teamDoshirak/
-
 ![](images/testcompletion.png)
 
 - Tested functions in the application
 - Tested all parts of user interface
 
 ## Live test logs from CI
-You can find the logs [here](quizgame/output/coverage)
+You can find the logs [here](https://iu-ipod-f20.github.io/map-projects-teamDoshirak/)
 
 # Branching policy
 - Adding new feature
