@@ -1,0 +1,28 @@
+name: Vue CI
+
+on: push
+
+jobs:
+  buildAndTest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js
+      uses: actions/setup-node@master
+    - name: install
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame install -d
+    - name: build
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame run build
+    - name: test
+      run: npm --prefix /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/quizgame test -- --coverage --coverageDirectory=/home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/docs
+    - name: lsoutput
+      run: ls /home/runner/work/map-projects-teamDoshirak/map-projects-teamDoshirak/docs
+    - name: publish test coverage report
+      uses: EndBug/add-and-commit@v4
+      with:
+        add: './docs'
+        force: true
+        message: Add generated docs
+      env:  # This is necessary in order to push a commit to the repo
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
